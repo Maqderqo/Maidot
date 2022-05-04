@@ -1,40 +1,33 @@
 //#region Hamburger
-{
+function addEvents() {
     const hamburger = document.getElementById("hamburger");
 
-    function addEvents() {
-        hamburger.addEventListener("click", () => {
-            hamburger.children[0].classList.toggle("rotate-right");
-            hamburger.children[1].classList.toggle("rotate");
-            hamburger.children[2].classList.toggle("rotate-left");
-            const bg1 = document.getElementsByClassName('menubg1')[0]
-            const bg2 = document.getElementsByClassName('menubg2')[0]
-            if (!bg1.classList.contains("openmenu")) {
-                bg1.classList.add("openmenu");
-                bg1.classList.remove("closemenu");
-                setTimeout(() => {
-                    bg2.classList.add("openmenu");
-                    bg2.classList.remove("closemenu");
+    hamburger.addEventListener("click", () => {
+        hamburger.children[0].classList.toggle("rotate-right");
+        hamburger.children[1].classList.toggle("rotate");
+        hamburger.children[2].classList.toggle("rotate-left");
+        const bgs = document.getElementsByClassName('menubg');
+        console.log(bgs);
 
-                }, 200);
-
-            } else {
-                bg2.classList.add("closemenu");
-                bg2.classList.remove("openmenu");
-
-                setTimeout(() => {
-                    bg1.classList.add("closemenu");
-                    bg1.classList.remove("openmenu");
-
-                }, 200);
-
-            }
-
-
-        });
-    }
+        console.log(!bgs[0].classList.contains("openmenu"));
+        if (!bgs[0].classList.contains("openmenu")) {
+            bgs[0].classList.add("openmenu");
+            bgs[0].classList.remove("closemenu");
+            setTimeout(() => {
+                bgs[1].classList.add("openmenu");
+                bgs[1].classList.remove("closemenu");
+            }, 150)
+        } else {
+            bgs[1].classList.remove("openmenu");
+            bgs[1].classList.add("closemenu");
+            setTimeout(() => {
+                bgs[0].classList.remove("openmenu");
+                bgs[0].classList.add("closemenu");
+            }, 250);
+        }
+    });
 }
-//#endregion
+
 
 
 
