@@ -1,6 +1,7 @@
 function addEvents() {
     //#region Hamburger
     const hamburger = document.getElementById("hamburger");
+
     hamburger.addEventListener("click", () => {
         hamburger.children[0].classList.toggle("rotate-right");
         hamburger.children[1].classList.toggle("rotate");
@@ -42,6 +43,7 @@ function addEvents() {
     });
     //#endregion
 }
+
 
 
 addEvents();
