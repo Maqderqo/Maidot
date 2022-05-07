@@ -1,34 +1,48 @@
+@font-face {
+    font-family: "zortfont";
+    src: url("/Menali_proekt-/zortfont.otf");
+}
+
 * {
     padding: 0;
     margin: 0;
+    font-family:"zortfont";
+    color: white;
 }
 
 body {
     height: 100vh;
-    background-color: blue;
+    background-color: #180D31;
 }
-
-header {
-    float: right;
+.logo{
+    width: 230px;
+}
+header{
+    border: 1px solid green;
+    padding: 28px;
+    
 }
 
 #hamburger {
-    z-index: 2;
-    margin: 15px;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    position: fixed;
+    margin-top: 35px;
+    margin-right: 25px;
     display: flex;
-    width: 50px;
+    width: 55px;
     height: 40px;
     flex-direction: column;
     justify-content: space-around;
+    z-index: 3;
 
 }
 
 span {
     border-top: 5px solid white;
     width: 80%;
-    border-radius: 2px;
     transition: 0.5s;
-
 }
 
 .slideright {
@@ -69,9 +83,9 @@ span {
 
 
 .menubg {
-    position: absolute;
+    position: fixed;
     background-color: #fb04ab;
-    z-index: -2;
+    z-index: 1;
     top: 0;
     right: 0;
     width: 0;
@@ -83,58 +97,97 @@ span {
     width: 100%;
     height: 100%;
     border-bottom-left-radius: 0;
-    transition:all  0.6s ease;
+    transition: all 0.6s ease;
 }
 
 .closemenu {
     width: 0;
     height: 0;
-    transition: all  0.6s ease;
+    transition: all 0.6s ease;
     border-bottom-left-radius: 500%;
 }
 
-/* @keyframes bigmenu {
-    0% {
+/* scroll bar */
 
-        border-bottom-left-radius: 100%;
-    }
-    25% {
-        width: 70%;
-        height: 70%;    
-    }
-    50% {
-    }
-    90% {
-    }
-    100% {
-        width: 100%;
-        height: 100%;
-        border-bottom-left-radius: 0%;
-    }
+::-webkit-scrollbar {
+    width: 5px;
 }
 
+::-webkit-scrollbar-thumb {
+    background-color: aqua;
+}
 
-@keyframes smallmenu {
+::-webkit-scrollbar-track {
+    background-color: rgb(198, 0, 135);
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: #160B2D;
+}
+
+/* mouse-icon */
+
+.mouse-icon {
+    position: fixed;
+    width: 26px;
+    height: 42px;
+    border: 1px solid rgba(0, 183, 255, 0.174);
+    border-radius: 20px;
+    bottom: 11%;
+    left: 50%;
+    transform: translate(-11%, 0);
+}
+
+.inner-icon {
+    position: absolute;
+    width: 22px;
+    height: 38px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.inner-icon::before {
+    content: '';
+    background: aqua;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: relative;
+    left: 42%;
+    top: -10%;
+    display: inline-block;
+    animation: dotanimation 2.4s infinite;
+}
+
+@keyframes dotanimation {
     0% {
-
-        border-bottom-left-radius: 0%;
     }
-
-    25% {
-        border-bottom-left-radius: 25%;
+    41%{
+        top: -10%;
+        width: 4px;
+        height: 4px;
     }
-
-    50% {
-        border-bottom-left-radius: 50%;
+    60% {
+        top: -20%;
+        opacity: 1;
+        height: 3px;
+        width: 3px;
     }
-
-    75% {
-        border-bottom-left-radius: 75%;
-    }
-
     100% {
-        width: 0;
-        height: 0;
-        border-bottom-left-radius: 100%;
+        height: 5px;
+        width: 2px;
+        top: 50%;
+        opacity: 0%;
     }
-} */
+}
+.mouse-icon-fade-in{
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}
+.mouse-icon-fade-out{
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+.invisible{
+    display: none;
+}

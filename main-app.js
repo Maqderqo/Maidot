@@ -1,5 +1,5 @@
-//#region Hamburger
 function addEvents() {
+    //#region Hamburger
     const hamburger = document.getElementById("hamburger");
     hamburger.addEventListener("click", () => {
         hamburger.children[0].classList.toggle("rotate-right");
@@ -25,8 +25,23 @@ function addEvents() {
             }, 250);
         }
     });
-}
+    //#endregion
 
+    //#region Mouse Icon
+    document.addEventListener('scroll', () => {
+        const mouseIcon = document.getElementsByClassName("mouse-icon")[0];
+        const srollY = window.scrollY;
+
+        if(srollY > 0){
+            mouseIcon.classList.add("mouse-icon-fade-out");
+            mouseIcon.classList.remove("mouse-icon-fade-in");
+        }else{
+            mouseIcon.classList.remove("mouse-icon-fade-out");
+            mouseIcon.classList.add("mouse-icon-fade-in");
+        }
+    });
+    //#endregion
+}
 
 
 addEvents();
