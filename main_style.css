@@ -1,17 +1,16 @@
 @font-face {
-    font-family: "zortfont";
-    src: url("zortfont.otf");
+    font-family: "Zort";
+    src: url("fonts/Zort.otf");
 }
 
 * {
     padding: 0;
     margin: 0;
-    font-family: "zortfont";
-    color: black;
 }
 
 h1 {
     font-size: 10em;
+    font-family:"Zort";
     color: white;
 }
 
@@ -28,6 +27,11 @@ header {
     border: 1px solid green;
     padding: 28px;
 
+}
+
+.logo{
+    width: 210px;
+    padding: 27px;
 }
 
 #hamburger {
@@ -135,6 +139,7 @@ span {
 }
 
 /*  mouse-icon */
+
 
 .mouse-icon {
     z-index: 10;

@@ -45,5 +45,14 @@ function addEvents() {
 }
 
 
-
+document.addEventListener('scroll', () => {
+    const mouseIcon = document.getElementsByClassName("mouse-icon")[0];
+    if (scrollY > 0) {
+        mouseIcon.classList.add('mouse-icon-fade-out')
+        mouseIcon.classList.remove('mouse-icon-fade-in')
+    } else {
+        mouseIcon.classList.remove('mouse-icon-fade-out')
+        mouseIcon.classList.add('mouse-icon-fade-in')
+    }
+});
 addEvents();
